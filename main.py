@@ -37,6 +37,6 @@ def in_year(station, year):
     df = pd.read_csv(filename, skiprows=20)
     df["    DATE"] = df["    DATE"].astype(str)
     result = df[df["    DATE"].str.startswith(str(year))].to_dict(orient="records")
-
+    return result
 if __name__ == "__main__":
     app.run(debug=True)
